@@ -6,7 +6,7 @@
   <title>Resinas DragonBall - Redes Sociales</title>
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: #111111;
       color: #ffffff;
       display: flex;
@@ -42,6 +42,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 12px;
       width: 100%;
       padding: 14px;
       margin: 12px 0;
@@ -56,6 +57,11 @@
     .btn:active {
       transform: scale(0.98);
     }
+    .btn img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
     .instagram {
       background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     }
@@ -65,24 +71,25 @@
     }
     .whatsapp {
       background-color: #25D366;
-      color: #ffffff;
     }
   </style>
 </head>
 <body>
   <div class="card">
     <h1>Resinas DragonBall</h1>
-    <p>¡Elige donde quieres seguirnos!</p>
+    <p>¡Síguenos en nuestras redes!</p>
 
     <a href="https://www.instagram.com/resinasdragonball" class="btn instagram" target="_blank">
-      📸 Instagram
+      <img src="Instagram.png" alt="Instagram">
+      Instagram
     </a>
 
     <a href="https://www.tiktok.com/@resinasdragonball" class="btn tiktok" target="_blank">
-      🎵 TikTok
+      <img src="TikTok.png" alt="TikTok">
+      TikTok
     </a>
 
-    <!-- Reemplaza el número de teléfono abajo por el tuyo con el prefijo de país (Ej: 34600000000) -->
+    <!-- Recuerda poner tu número de WhatsApp real abajo -->
     <a href="https://wa.me/34000000000" class="btn whatsapp" target="_blank">
       💬 WhatsApp
     </a>

@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #111111;
+      background: #111111; /* Fondo oscuro */
       color: #ffffff;
       display: flex;
       flex-direction: column;
@@ -19,49 +19,67 @@
       box-sizing: border-box;
     }
     .card {
-      background: #1e1e1e;
+      background: #1e1e1e; /* Fondo de la tarjeta */
       border: 1px solid #333;
       border-radius: 20px;
       padding: 30px 24px;
       text-align: center;
       width: 100%;
-      max-width: 360px;
+      max-width: 400px; /* Un poco más ancha para los botones en línea */
       box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
     h1 {
       font-size: 22px;
       margin-bottom: 6px;
-      color: #ff9900;
+      color: #ff9900; /* Color naranja DragonBall */
     }
     p {
       font-size: 14px;
       color: #aaa;
-      margin-bottom: 24px;
+      margin-bottom: 30px; /* Más espacio antes de los botones */
+    }
+    /* Contenedor para alinear los botones en línea */
+    .button-container {
+      display: flex;
+      justify-content: center; /* Centra los botones horizontalmente */
+      gap: 15px; /* Espacio entre los botones */
+      flex-wrap: wrap; /* Permite que bajen si no caben en pantallas muy pequeñas */
     }
     .btn {
       display: flex;
+      flex-direction: column; /* Icono arriba, texto abajo */
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      width: 100%;
-      padding: 14px;
-      margin: 12px 0;
-      border-radius: 12px;
+      /* Botones cuadrados */
+      width: 100px;
+      height: 100px;
+      border-radius: 15px; /* Bordes redondeados */
       text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
       color: white;
       box-sizing: border-box;
-      transition: transform 0.15s ease;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      font-size: 12px; /* Texto más pequeño */
+      font-weight: 600;
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255,153,0,0.3); /* Brillo al pasar el ratón */
     }
     .btn:active {
-      transform: scale(0.98);
+      transform: scale(0.95);
     }
-    .btn img {
-      width: 24px;
-      height: 24px;
+    /* Tamaño y estilo de los iconos dentro de los botones */
+    .btn img, .btn-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 8px; /* Espacio con el texto */
       object-fit: contain;
     }
+    .btn-icon {
+        font-size: 40px;
+        line-height: 40px;
+    }
+    /* Colores y estilos específicos para cada red social */
     .instagram {
       background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     }
@@ -79,20 +97,26 @@
     <h1>Resinas DragonBall</h1>
     <p>¡Síguenos en nuestras redes!</p>
 
-    <a href="https://www.instagram.com/resinasdragonball" class="btn instagram" target="_blank">
-      <img src="Instagram.png" alt="Instagram">
-      Instagram
-    </a>
+    <div class="button-container">
+      <!-- Botón de Instagram usando tu imagen -->
+      <a href="https://www.instagram.com/resinasdragonball" class="btn instagram" target="_blank">
+        <img src="Instagram.png" alt="Instagram">
+        Instagram
+      </a>
 
-    <a href="https://www.tiktok.com/@resinasdragonball" class="btn tiktok" target="_blank">
-      <img src="TikTok.png" alt="TikTok">
-      TikTok
-    </a>
+      <!-- Botón de TikTok usando tu imagen -->
+      <a href="https://www.tiktok.com/@resinasdragonball" class="btn tiktok" target="_blank">
+        <img src="TikTok.png" alt="TikTok">
+        TikTok
+      </a>
 
-    <!-- Recuerda poner tu número de WhatsApp real abajo -->
-    <a href="https://wa.me/34000000000" class="btn whatsapp" target="_blank">
-      💬 WhatsApp
-    </a>
+      <!-- Botón de WhatsApp usando un emoji -->
+      <!-- Recuerda cambiar '34000000000' por tu número real con prefijo -->
+      <a href="https://wa.me/34000000000" class="btn whatsapp" target="_blank">
+        <span class="btn-icon">💬</span>
+        WhatsApp
+      </a>
+    </div>
   </div>
 </body>
 </html>

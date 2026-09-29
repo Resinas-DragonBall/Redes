@@ -5,9 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resinas DragonBall - Redes Sociales</title>
   <style>
+    /* Estilos para el fondo completo del HTML */
+    html {
+      /* Ruta a tu imagen de fondo */
+      background-image: url('fondo.png');
+      
+      /* Escala la imagen para cubrir todo el fondo sin deformarse */
+      background-size: cover;
+      
+      /* Centra la imagen */
+      background-position: center center;
+      
+      /* Evita que la imagen se repita */
+      background-repeat: no-repeat;
+      
+      /* Fija el fondo para que no se mueva al hacer scroll (opcional, queda muy bien) */
+      background-attachment: fixed;
+      
+      /* Color de fondo de respaldo por si la imagen no carga */
+      background-color: #000000; 
+      
+      /* Asegura que el html ocupe todo el alto */
+      height: 100%;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #111111;
+      /* Eliminamos el color de fondo del body para ver el del html */
+      background: transparent; 
       color: #ffffff;
       display: flex;
       flex-direction: column;
@@ -18,32 +43,43 @@
       padding: 20px;
       box-sizing: border-box;
     }
+
     .card {
-      background: #1e1e1e;
+      /* Hacemos la tarjeta un poco translúcida para que se vea el fondo por detrás */
+      background: rgba(30, 30, 30, 0.85); 
       border: 1px solid #333;
       border-radius: 20px;
       padding: 30px 24px;
       text-align: center;
       width: 100%;
       max-width: 400px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+      /* Efecto de desenfoque detrás de la tarjeta (glassmorphism) */
+      backdrop-filter: blur(5px); 
     }
+
     h1 {
       font-size: 22px;
       margin-bottom: 6px;
       color: #ff9900;
+      /* Añadimos una pequeña sombra al texto para que resalte más sobre el fondo */
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
+
     p {
       font-size: 14px;
-      color: #aaa;
+      color: #ccc; /* Un gris un poco más claro */
       margin-bottom: 30px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
+
     .button-container {
       display: flex;
       justify-content: center;
       gap: 15px;
       flex-wrap: wrap;
     }
+
     .btn {
       display: flex;
       flex-direction: column;
@@ -58,27 +94,35 @@
       transition: transform 0.15s ease, box-shadow 0.15s ease;
       font-size: 12px;
       font-weight: 600;
+      /* Sombra para los botones */
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
+
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(255,153,0,0.3);
+      box-shadow: 0 5px 15px rgba(255,153,0,0.5);
     }
+
     .btn:active {
       transform: scale(0.95);
     }
+
     .btn img {
       width: 40px;
       height: 40px;
       margin-bottom: 8px;
       object-fit: contain;
     }
+
     .instagram {
       background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     }
+
     .tiktok {
       background-color: #000000;
       border: 1px solid #444;
     }
+
     .whatsapp {
       background-color: #25D366;
     }

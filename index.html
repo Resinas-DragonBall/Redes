@@ -12,7 +12,7 @@
 
   <style>
     html {
-      background-image: url('fondo.png?v=6');
+      background-image: url('fondo.png?v=7');
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -35,7 +35,7 @@
       box-sizing: border-box;
     }
 
-    /* Recuadro enfocado solo en el título y subtítulo */
+    /* Recuadro con el título y subtítulo */
     .card {
       background: rgba(30, 30, 30, 0.85); 
       border: 1px solid #333;
@@ -93,8 +93,6 @@
       font-size: 11px;
       font-weight: 600;
       box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-      border: none;
-      cursor: pointer;
     }
 
     .btn:hover {
@@ -125,79 +123,6 @@
     .whatsapp {
       background-color: #25D366;
     }
-
-    /* Estilos para el Pop-Up (Modal) */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(4px);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .modal-content {
-      background: #1e1e1e;
-      border: 1px solid #333;
-      border-radius: 20px;
-      padding: 24px;
-      text-align: center;
-      max-width: 320px;
-      width: 100%;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-      position: relative;
-      animation: popupAnim 0.2s ease-out;
-    }
-
-    @keyframes popupAnim {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    .modal-content h2 {
-      font-family: 'Bangers', cursive;
-      font-size: 26px;
-      color: #FFB703;
-      margin: 0 0 10px 0;
-      letter-spacing: 1px;
-    }
-
-    .modal-content p {
-      font-size: 15px;
-      color: #e0e0e0;
-      line-height: 1.4;
-      margin-bottom: 20px;
-    }
-
-    .modal-btn {
-      display: inline-block;
-      background-color: #25D366;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 15px;
-      padding: 12px 20px;
-      border-radius: 12px;
-      margin-bottom: 10px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .close-btn {
-      background: transparent;
-      border: none;
-      color: #888;
-      font-size: 13px;
-      cursor: pointer;
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
@@ -208,7 +133,7 @@
     <p>¡Síguenos en nuestras redes!</p>
   </div>
 
-  <!-- Botones libres fuera del recuadro -->
+  <!-- Botones independientes fuera del recuadro -->
   <div class="button-container">
     <a href="https://www.instagram.com/resinasdragonball" class="btn instagram" target="_blank">
       <img src="Instagram.png" alt="Instagram">
@@ -220,42 +145,12 @@
       TikTok
     </a>
 
-    <!-- Botón de WhatsApp abre el Pop-Up -->
-    <button class="btn whatsapp" onclick="openModal()">
+    <!-- Abre directamente el chat con el 633950766 -->
+    <a href="https://wa.me/34633950766" class="btn whatsapp" target="_blank">
       <img src="WhatsApp.png" alt="WhatsApp">
       WhatsApp
-    </button>
+    </a>
   </div>
-
-  <!-- Estructura del Pop-Up -->
-  <div class="modal-overlay" id="whatsappModal">
-    <div class="modal-content">
-      <h2>¡Contacto Directo!</h2>
-      <p>Para realizar tu encargo/pedido personalizado contáctanos al <strong>633950766</strong></p>
-      <a href="https://wa.me/34633950766" class="btn whatsapp modal-btn" target="_blank">
-        Ir a WhatsApp
-      </a>
-      <button class="close-btn" onclick="closeModal()">Cerrar</button>
-    </div>
-  </div>
-
-  <script>
-    function openModal() {
-      document.getElementById('whatsappModal').style.display = 'flex';
-    }
-
-    function closeModal() {
-      document.getElementById('whatsappModal').style.display = 'none';
-    }
-
-    // Cerrar el modal al hacer clic fuera del contenido
-    window.onclick = function(event) {
-      const modal = document.getElementById('whatsappModal');
-      if (event.target === modal) {
-        closeModal();
-      }
-    }
-  </script>
 
 </body>
 </html>

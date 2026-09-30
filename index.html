@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resinas DragonBall - Redes Sociales</title>
   
-  <!-- Importamos la fuente de Dragon Ball (Saiyan Sans) -->
+  <!-- Tipografía de Dragon Ball -->
   <link href="https://fonts.cdnfonts.com/css/saiyan-sans" rel="stylesheet">
 
   <style>
-    /* Estilos para el fondo completo del HTML */
     html {
       background-image: url('fondo.png?v=2');
-      background-size: cover;
+      background-size: contain; /* Ajusta la imagen al formato móvil sin estirar */
       background-position: center center;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -41,36 +40,33 @@
       padding: 30px 24px;
       text-align: center;
       width: 100%;
-      max-width: 400px;
+      max-width: 360px; /* Tamaño optimizado para móvil */
       box-shadow: 0 10px 25px rgba(0,0,0,0.7);
       backdrop-filter: blur(5px); 
     }
 
-    /* Estilo estilo Dragon Ball para el título */
     h1 {
       font-family: 'Saiyan Sans', sans-serif;
-      font-size: 36px;
+      font-size: 34px;
       margin-bottom: 6px;
-      color: #FFCC00; /* Amarillo característico */
+      color: #FFCC00;
       text-transform: uppercase;
       letter-spacing: 2px;
-      /* Borde negro alrededor de las letras */
       -webkit-text-stroke: 1.5px #000000;
-      /* Sombra para darle relieve estilo cómic/anime */
       text-shadow: 3px 3px 0px #FF0000, 5px 5px 10px rgba(0,0,0,0.8);
     }
 
     p {
       font-size: 14px;
       color: #ccc;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
 
     .button-container {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
@@ -79,14 +75,14 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 100px;
-      height: 100px;
+      width: 90px;
+      height: 90px;
       border-radius: 15px;
       text-decoration: none;
       color: white;
       box-sizing: border-box;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
@@ -101,9 +97,9 @@
     }
 
     .btn img {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 8px;
+      width: 36px;
+      height: 36px;
+      margin-bottom: 6px;
       object-fit: contain;
     }
 

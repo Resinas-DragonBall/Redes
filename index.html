@@ -12,10 +12,8 @@
 
   <style>
     html {
-      background-image: url('fondo.png?v=3');
-      /* Cubre todo el fondo de la pantalla eliminando las franjas negras */
+      background-image: url('fondo.png?v=5');
       background-size: cover;
-      /* Mantiene la esfera y al personaje centrados */
       background-position: center center;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -30,29 +28,31 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end; 
       min-height: 100vh;
       margin: 0;
-      padding: 20px;
+      padding: 20px 20px 40px 20px; 
       box-sizing: border-box;
     }
 
+    /* Recuadro enfocado solo en el título y subtítulo */
     .card {
       background: rgba(30, 30, 30, 0.85); 
       border: 1px solid #333;
       border-radius: 20px;
-      padding: 30px 24px;
+      padding: 20px 24px;
       text-align: center;
       width: 100%;
       max-width: 360px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.7);
       backdrop-filter: blur(5px); 
+      margin-bottom: 20px; /* Espacio entre el recuadro y los botones */
     }
 
     h1 {
       font-family: 'Bangers', cursive;
-      font-size: 38px;
-      margin-bottom: 6px;
+      font-size: 36px;
+      margin: 0 0 4px 0;
       color: #FFB703;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -63,17 +63,21 @@
     p {
       font-size: 14px;
       color: #ccc;
-      margin-bottom: 25px;
+      margin: 0;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
 
+    /* Contenedor libre fuera del recuadro */
     .button-container {
       display: flex;
       justify-content: center;
-      gap: 12px;
+      gap: 15px;
       flex-wrap: wrap;
+      width: 100%;
+      max-width: 360px;
     }
 
+    /* Botones independientes sin marco general */
     .btn {
       display: flex;
       flex-direction: column;
@@ -81,19 +85,19 @@
       justify-content: center;
       width: 90px;
       height: 90px;
-      border-radius: 15px;
+      border-radius: 18px;
       text-decoration: none;
       color: white;
       box-sizing: border-box;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
       font-size: 11px;
       font-weight: 600;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.5);
     }
 
     .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(255,153,0,0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(255,183,3,0.4);
     }
 
     .btn:active {
@@ -101,8 +105,8 @@
     }
 
     .btn img {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       margin-bottom: 6px;
       object-fit: contain;
     }
@@ -122,26 +126,30 @@
   </style>
 </head>
 <body>
+
+  <!-- Recuadro solo con el nombre y subtítulo -->
   <div class="card">
     <h1>Resinas DragonBall</h1>
     <p>¡Síguenos en nuestras redes!</p>
-
-    <div class="button-container">
-      <a href="https://www.instagram.com/resinasdragonball" class="btn instagram" target="_blank">
-        <img src="Instagram.png" alt="Instagram">
-        Instagram
-      </a>
-
-      <a href="https://www.tiktok.com/@resinasdragonball" class="btn tiktok" target="_blank">
-        <img src="TikTok.png" alt="TikTok">
-        TikTok
-      </a>
-
-      <a href="https://wa.me/34000000000" class="btn whatsapp" target="_blank">
-        <img src="WhatsApp.png" alt="WhatsApp">
-        WhatsApp
-      </a>
-    </div>
   </div>
+
+  <!-- Botones sueltos por debajo de la tarjeta -->
+  <div class="button-container">
+    <a href="https://www.instagram.com/resinasdragonball" class="btn instagram" target="_blank">
+      <img src="Instagram.png" alt="Instagram">
+      Instagram
+    </a>
+
+    <a href="https://www.tiktok.com/@resinasdragonball" class="btn tiktok" target="_blank">
+      <img src="TikTok.png" alt="TikTok">
+      TikTok
+    </a>
+
+    <a href="https://wa.me/34000000000" class="btn whatsapp" target="_blank">
+      <img src="WhatsApp.png" alt="WhatsApp">
+      WhatsApp
+    </a>
+  </div>
+
 </body>
 </html>

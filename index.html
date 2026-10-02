@@ -5,12 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resinas DragonBall - Redes Sociales</title>
   
-  <!-- Fuente Bangers desde Google Fonts (Estilo Anime/Manga) -->
+  <!-- Fuente Bangers desde Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --db-orange: #ff8c00;
+      --db-yellow: #ffcc00;
+      --db-glow: rgba(255, 140, 0, 0.6);
+    }
+
     html {
       background-image: url('fondo.png?v=7');
       background-size: cover;
@@ -31,84 +37,107 @@
       justify-content: flex-end; 
       min-height: 100vh;
       margin: 0;
-      padding: 20px 20px 40px 20px; 
+      padding: 20px 20px 50px 20px; 
       box-sizing: border-box;
     }
 
-    /* Recuadro con el título y subtítulo */
+    /* Recuadro principal estilo Glassmorphism con aura Ki */
     .card {
-      background: rgba(30, 30, 30, 0.85); 
-      border: 1px solid #333;
-      border-radius: 20px;
-      padding: 20px 24px;
+      background: rgba(18, 18, 20, 0.85); 
+      border: 2px solid var(--db-orange);
+      border-radius: 24px;
+      padding: 24px 28px;
       text-align: center;
       width: 100%;
       max-width: 360px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.7);
-      backdrop-filter: blur(5px); 
-      margin-bottom: 20px;
+      box-shadow: 0 0 25px var(--db-glow), inset 0 0 15px rgba(255, 183, 3, 0.2);
+      backdrop-filter: blur(10px); 
+      -webkit-backdrop-filter: blur(10px);
+      margin-bottom: 24px;
+      animation: auraPulse 3s infinite alternate ease-in-out;
+    }
+
+    @keyframes auraPulse {
+      0% {
+        box-shadow: 0 0 15px var(--db-glow), inset 0 0 10px rgba(255, 183, 3, 0.1);
+      }
+      100% {
+        box-shadow: 0 0 30px rgba(255, 140, 0, 0.9), inset 0 0 20px rgba(255, 183, 3, 0.3);
+      }
     }
 
     h1 {
       font-family: 'Bangers', cursive;
-      font-size: 36px;
-      margin: 0 0 4px 0;
-      color: #FFB703;
+      font-size: 38px;
+      margin: 0 0 6px 0;
+      background: linear-gradient(180deg, #FFE600 0%, #FF6B00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       letter-spacing: 2px;
       text-transform: uppercase;
-      -webkit-text-stroke: 1px #000000;
-      text-shadow: 2px 2px 0px #E63946, 4px 4px 10px rgba(0,0,0,0.9);
+      filter: drop-shadow(2px 3px 0px #000000) drop-shadow(0 0 10px rgba(255, 107, 0, 0.8));
     }
 
     p {
-      font-size: 14px;
-      color: #ccc;
+      font-size: 15px;
+      font-weight: 500;
+      color: #e0e0e0;
       margin: 0;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+      letter-spacing: 0.5px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
     }
 
     /* Contenedor de botones */
     .button-container {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 16px;
       flex-wrap: wrap;
       width: 100%;
       max-width: 360px;
     }
 
-    /* Botones independientes */
+    /* Botones estilo red social con respuesta táctil */
     .btn {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 90px;
-      height: 90px;
-      border-radius: 18px;
+      width: 95px;
+      height: 95px;
+      border-radius: 20px;
       text-decoration: none;
       color: white;
       box-sizing: border-box;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-      font-size: 11px;
-      font-weight: 600;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+      transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      position: relative;
+      overflow: hidden;
     }
 
     .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(255,183,3,0.4);
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 12px 25px rgba(255, 183, 3, 0.5);
     }
 
     .btn:active {
-      transform: scale(0.95);
+      transform: translateY(-2px) scale(0.97);
     }
 
     .btn img {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       margin-bottom: 6px;
       object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover img {
+      transform: scale(1.1);
     }
 
     .instagram {
@@ -116,18 +145,18 @@
     }
 
     .tiktok {
-      background-color: #000000;
-      border: 1px solid #444;
+      background-color: #121212;
+      border: 1px solid #333;
     }
 
     .whatsapp {
-      background-color: #25D366;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     }
   </style>
 </head>
 <body>
 
-  <!-- Recuadro solo con el nombre y subtítulo -->
+  <!-- Recuadro con el nombre y subtítulo -->
   <div class="card">
     <h1>Resinas DragonBall</h1>
     <p>¡Síguenos en nuestras redes!</p>
@@ -145,7 +174,6 @@
       TikTok
     </a>
 
-    <!-- Abre directamente el chat con el 633950766 -->
     <a href="https://wa.me/34633950766" class="btn whatsapp" target="_blank">
       <img src="WhatsApp.png" alt="WhatsApp">
       WhatsApp

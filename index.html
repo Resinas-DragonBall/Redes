@@ -3,33 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nuestras Redes Sociales</title>
+  <title>Resinas DragonBall - Redes Sociales</title>
   
-  <!-- Fuente Bangers desde Google Fonts -->
+  <!-- Fuente Bangers desde Google Fonts (Estilo Anime/Manga) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --db-orange: #ff8c00;
-      --db-yellow: #ffcc00;
-      --db-glow: rgba(255, 140, 0, 0.6);
-      
-      --pk-red: #ff3e3e;
-      --pk-yellow: #ffcb05;
-      --pk-glow: rgba(255, 62, 62, 0.6);
-    }
-
     html {
-      background-image: url('fondo.png?v=7');
+      background-image: url('fondo.png?v=8');
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-color: #000000; 
       height: 100%;
-      transition: background-image 0.4s ease-in-out;
     }
 
     body {
@@ -42,157 +31,84 @@
       justify-content: flex-end; 
       min-height: 100vh;
       margin: 0;
-      padding: 20px 20px 50px 20px; 
+      padding: 20px 20px 40px 20px; 
       box-sizing: border-box;
     }
 
-    /* Selector de Pestañas arriba */
-    .tab-container {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-      width: 100%;
-      max-width: 360px;
-    }
-
-    .tab-btn {
-      flex: 1;
-      padding: 12px 10px;
-      font-family: 'Bangers', cursive;
-      font-size: 18px;
-      letter-spacing: 1px;
-      border: 2px solid #444;
-      background: rgba(20, 20, 20, 0.85);
-      color: #888;
-      border-radius: 14px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(5px);
-    }
-
-    .tab-btn.active-db {
-      background: rgba(255, 140, 0, 0.2);
-      border-color: var(--db-orange);
-      color: var(--db-yellow);
-      box-shadow: 0 0 15px var(--db-glow);
-    }
-
-    .tab-btn.active-pk {
-      background: rgba(255, 62, 62, 0.2);
-      border-color: var(--pk-red);
-      color: var(--pk-yellow);
-      box-shadow: 0 0 15px var(--pk-glow);
-    }
-
-    /* Recuadro principal */
+    /* Recuadro solo con el nombre y subtítulo */
     .card {
-      background: rgba(18, 18, 20, 0.85); 
-      border-radius: 24px;
-      padding: 24px 28px;
+      background: rgba(30, 30, 30, 0.85); 
+      border: 1px solid #333;
+      border-radius: 20px;
+      padding: 20px 24px;
       text-align: center;
       width: 100%;
       max-width: 360px;
-      backdrop-filter: blur(10px); 
-      -webkit-backdrop-filter: blur(10px);
-      margin-bottom: 24px;
-      box-sizing: border-box;
-      transition: all 0.3s ease;
-    }
-
-    /* Estilos dinámicos para DragonBall */
-    .card.db-theme {
-      border: 2px solid var(--db-orange);
-      box-shadow: 0 0 25px var(--db-glow), inset 0 0 15px rgba(255, 183, 3, 0.2);
-    }
-
-    .card.db-theme h1 {
-      background: linear-gradient(180deg, #FFE600 0%, #FF6B00 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(2px 3px 0px #000000) drop-shadow(0 0 10px rgba(255, 107, 0, 0.8));
-    }
-
-    /* Estilos dinámicos para Pokemanía */
-    .card.pk-theme {
-      border: 2px solid var(--pk-red);
-      box-shadow: 0 0 25px var(--pk-glow), inset 0 0 15px rgba(255, 203, 5, 0.2);
-    }
-
-    .card.pk-theme h1 {
-      background: linear-gradient(180deg, #FFCB05 0%, #FF3E3E 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(2px 3px 0px #000000) drop-shadow(0 0 10px rgba(255, 62, 62, 0.8));
+      box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+      backdrop-filter: blur(5px); 
+      margin-bottom: 20px;
     }
 
     h1 {
       font-family: 'Bangers', cursive;
-      font-size: 38px;
-      margin: 0 0 6px 0;
+      font-size: 36px;
+      margin: 0 0 4px 0;
+      color: #FFB703;
       letter-spacing: 2px;
       text-transform: uppercase;
+      -webkit-text-stroke: 1px #000000;
+      text-shadow: 2px 2px 0px #E63946, 4px 4px 10px rgba(0,0,0,0.9);
     }
 
     p {
-      font-size: 15px;
-      font-weight: 500;
-      color: #e0e0e0;
+      font-size: 14px;
+      color: #ccc;
       margin: 0;
-      letter-spacing: 0.5px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
 
-    /* Contenedor de botones */
+    /* Contenedor de botones fuera del recuadro */
     .button-container {
       display: flex;
       justify-content: center;
-      gap: 16px;
+      gap: 15px;
       flex-wrap: wrap;
       width: 100%;
       max-width: 360px;
     }
 
-    /* Botones */
+    /* Botones independientes sin marco general */
     .btn {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 95px;
-      height: 95px;
-      border-radius: 20px;
+      width: 90px;
+      height: 90px;
+      border-radius: 18px;
       text-decoration: none;
       color: white;
       box-sizing: border-box;
-      transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-      position: relative;
-      overflow: hidden;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      font-size: 11px;
+      font-weight: 600;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.5);
     }
 
     .btn:hover {
-      transform: translateY(-6px) scale(1.05);
-      box-shadow: 0 12px 25px rgba(255, 183, 3, 0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(255,183,3,0.4);
     }
 
     .btn:active {
-      transform: translateY(-2px) scale(0.97);
+      transform: scale(0.95);
     }
 
     .btn img {
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       margin-bottom: 6px;
       object-fit: contain;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
-      transition: transform 0.2s ease;
-    }
-
-    .btn:hover img {
-      transform: scale(1.1);
     }
 
     .instagram {
@@ -200,110 +116,41 @@
     }
 
     .tiktok {
-      background-color: #121212;
-      border: 1px solid #333;
+      background-color: #000000;
+      border: 1px solid #444;
     }
 
     .whatsapp {
-      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-    }
-
-    /* Ocultar contenido inactivo */
-    .tab-content {
-      display: none;
-      width: 100%;
-    }
-
-    .tab-content.active {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      background-color: #25D366;
     }
   </style>
 </head>
 <body>
 
-  <!-- Selector de Perfil -->
-  <div class="tab-container">
-    <button class="tab-btn active-db" id="btn-db" onclick="switchTab('db')">Dragon Ball</button>
-    <button class="tab-btn" id="btn-pk" onclick="switchTab('pk')">Pokemanía3D</button>
+  <!-- Recuadro solo con el nombre y subtítulo -->
+  <div class="card">
+    <h1>Resinas DragonBall</h1>
+    <p>¡Síguenos en nuestras redes!</p>
   </div>
 
-  <!-- PERFIL 1: DRAGON BALL -->
-  <div id="content-db" class="tab-content active">
-    <div class="card db-theme">
-      <h1>Resinas DragonBall</h1>
-      <p>¡Síguenos en nuestras redes!</p>
-    </div>
+  <!-- Botones libres fuera del recuadro -->
+  <div class="button-container">
+    <a href="https://www.instagram.com/resinasdragonball" class="btn instagram" target="_blank">
+      <img src="Instagram.png" alt="Instagram">
+      Instagram
+    </a>
 
-    <div class="button-container">
-      <a href="https://www.instagram.com/resinasdragonball" class="btn instagram" target="_blank">
-        <img src="Instagram.png" alt="Instagram">
-        Instagram
-      </a>
-      <a href="https://www.tiktok.com/@resinasdragonball" class="btn tiktok" target="_blank">
-        <img src="TikTok.png" alt="TikTok">
-        TikTok
-      </a>
-      <a href="https://wa.me/34633950766" class="btn whatsapp" target="_blank">
-        <img src="WhatsApp.png" alt="WhatsApp">
-        WhatsApp
-      </a>
-    </div>
+    <a href="https://www.tiktok.com/@resinasdragonball" class="btn tiktok" target="_blank">
+      <img src="TikTok.png" alt="TikTok">
+      TikTok
+    </a>
+
+    <!-- Directo al chat de WhatsApp con el 633950766 -->
+    <a href="https://wa.me/34633950766" class="btn whatsapp" target="_blank">
+      <img src="WhatsApp.png" alt="WhatsApp">
+      WhatsApp
+    </a>
   </div>
-
-  <!-- PERFIL 2: POKEMANÍA 3D -->
-  <div id="content-pk" class="tab-content">
-    <div class="card pk-theme">
-      <h1>Pokemanía3D</h1>
-      <p>¡Síguenos en nuestras redes!</p>
-    </div>
-
-    <div class="button-container">
-      <a href="https://www.instagram.com/resinasdragonball" class="btn instagram" target="_blank">
-        <img src="Instagram.png" alt="Instagram">
-        Instagram
-      </a>
-      <a href="https://www.tiktok.com/@pokemania3d0?_r=1&_t=ZN-9ADoKgChuje" class="btn tiktok" target="_blank">
-        <img src="TikTok.png" alt="TikTok">
-        TikTok
-      </a>
-      <a href="https://wa.me/34633950766" class="btn whatsapp" target="_blank">
-        <img src="WhatsApp.png" alt="WhatsApp">
-        WhatsApp
-      </a>
-    </div>
-  </div>
-
-  <script>
-    function switchTab(tab) {
-      const dbContent = document.getElementById('content-db');
-      const pkContent = document.getElementById('content-pk');
-      const dbBtn = document.getElementById('btn-db');
-      const pkBtn = document.getElementById('btn-pk');
-      const html = document.documentElement;
-
-      if (tab === 'db') {
-        dbContent.classList.add('active');
-        pkContent.classList.remove('active');
-        
-        dbBtn.className = 'tab-btn active-db';
-        pkBtn.className = 'tab-btn';
-
-        /* Cambia al fondo de Dragon Ball */
-        html.style.backgroundImage = "url('fondo.png?v=7')";
-      } else {
-        pkContent.classList.add('active');
-        dbContent.classList.remove('active');
-        
-        pkBtn.className = 'tab-btn active-pk';
-        dbBtn.className = 'tab-btn';
-
-        /* Cambia al fondo de Pokemanía */
-        html.style.backgroundImage = "url('fondo2.png')";
-      }
-    }
-  </script>
 
 </body>
 </html>

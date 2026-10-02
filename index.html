@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resinas DragonBall - Redes Sociales</title>
   
-  <!-- Fuente Bangers desde Google Fonts (Estilo Anime/Manga) -->
+  <!-- Fuente Bangers desde Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 
   <style>
     html {
-      background-image: url('fondo.png?v=8');
+      background-image: url('fondo.png?v=9');
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -35,10 +35,50 @@
       box-sizing: border-box;
     }
 
-    /* Recuadro solo con el nombre y subtítulo */
+    /* Pestañas superiores (Dragon Ball / Pokemanía3D) */
+    .tabs-container {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-family: 'Bangers', cursive;
+      font-size: 18px;
+      letter-spacing: 1px;
+      text-align: center;
+      text-decoration: none;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+      box-sizing: border-box;
+    }
+
+    .tab-active {
+      background-color: #FFB703;
+      color: #000000;
+      border: 2px solid #FFB703;
+      box-shadow: 0 4px 10px rgba(255, 183, 3, 0.4);
+    }
+
+    .tab-inactive {
+      background: rgba(30, 30, 30, 0.85);
+      color: #cccccc;
+      border: 1px solid #444;
+      backdrop-filter: blur(5px);
+    }
+
+    .tab-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Recuadro enfocado solo en el nombre y subtítulo */
     .card {
       background: rgba(30, 30, 30, 0.85); 
-      border: 1px solid #333;
+      border: 1px solid #FFB703;
       border-radius: 20px;
       padding: 20px 24px;
       text-align: center;
@@ -47,6 +87,7 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.7);
       backdrop-filter: blur(5px); 
       margin-bottom: 20px;
+      box-sizing: border-box;
     }
 
     h1 {
@@ -77,7 +118,7 @@
       max-width: 360px;
     }
 
-    /* Botones independientes sin marco general */
+    /* Botones independientes */
     .btn {
       display: flex;
       flex-direction: column;
@@ -127,7 +168,13 @@
 </head>
 <body>
 
-  <!-- Recuadro solo con el nombre y subtítulo -->
+  <!-- Pestañas superiores -->
+  <div class="tabs-container">
+    <a href="#" class="tab-btn tab-active">DRAGON BALL</a>
+    <a href="pokemania.html" class="tab-btn tab-inactive">POKEMANÍA3D</a>
+  </div>
+
+  <!-- Recuadro solo para el título y subtítulo -->
   <div class="card">
     <h1>Resinas DragonBall</h1>
     <p>¡Síguenos en nuestras redes!</p>
@@ -145,7 +192,6 @@
       TikTok
     </a>
 
-    <!-- Directo al chat de WhatsApp con el 633950766 -->
     <a href="https://wa.me/34633950766" class="btn whatsapp" target="_blank">
       <img src="WhatsApp.png" alt="WhatsApp">
       WhatsApp

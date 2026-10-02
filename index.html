@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resinas DragonBall - Redes Sociales</title>
+  <title>Resinas DragonBall / Pokemanía3D</title>
   
-  <!-- Fuente Bangers desde Google Fonts -->
+  <!-- Fuente Bangers desde Google Fonts (Estilo Anime/Manga) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 
   <style>
     html {
-      background-image: url('fondo.png?v=9');
+      background-image: url('fondo.png?v=10');
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -52,8 +52,9 @@
       font-size: 18px;
       letter-spacing: 1px;
       text-align: center;
-      text-decoration: none;
-      transition: transform 0.15s ease, background-color 0.15s ease;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
       box-sizing: border-box;
     }
 
@@ -75,7 +76,7 @@
       transform: translateY(-2px);
     }
 
-    /* Recuadro enfocado solo en el nombre y subtítulo */
+    /* Recuadro solo con el nombre y subtítulo */
     .card {
       background: rgba(30, 30, 30, 0.85); 
       border: 1px solid #FFB703;
@@ -168,35 +169,75 @@
 </head>
 <body>
 
-  <!-- Pestañas superiores -->
+  <!-- Pestañas para cambiar la sección -->
   <div class="tabs-container">
-    <a href="#" class="tab-btn tab-active">DRAGON BALL</a>
-    <a href="pokemania.html" class="tab-btn tab-inactive">POKEMANÍA3D</a>
+    <button id="tab-db" class="tab-btn tab-active" onclick="switchTab('db')">DRAGON BALL</button>
+    <button id="tab-pm" class="tab-btn tab-inactive" onclick="switchTab('pm')">POKEMANÍA3D</button>
   </div>
 
-  <!-- Recuadro solo para el título y subtítulo -->
+  <!-- Recuadro dinámico con el título -->
   <div class="card">
-    <h1>Resinas DragonBall</h1>
-    <p>¡Síguenos en nuestras redes!</p>
+    <h1 id="main-title">Resinas DragonBall</h1>
+    <p id="main-subtitle">¡Síguenos en nuestras redes!</p>
   </div>
 
-  <!-- Botones libres fuera del recuadro -->
+  <!-- Botones independientes con enlaces dinámicos -->
   <div class="button-container">
-    <a href="https://www.instagram.com/resinasdragonball" class="btn instagram" target="_blank">
+    <a id="link-instagram" href="https://www.instagram.com/resinasdragonball" class="btn instagram" target="_blank">
       <img src="Instagram.png" alt="Instagram">
       Instagram
     </a>
 
-    <a href="https://www.tiktok.com/@resinasdragonball" class="btn tiktok" target="_blank">
+    <a id="link-tiktok" href="https://www.tiktok.com/@resinasdragonball" class="btn tiktok" target="_blank">
       <img src="TikTok.png" alt="TikTok">
       TikTok
     </a>
 
-    <a href="https://wa.me/34633950766" class="btn whatsapp" target="_blank">
+    <a id="link-whatsapp" href="https://wa.me/34633950766" class="btn whatsapp" target="_blank">
       <img src="WhatsApp.png" alt="WhatsApp">
       WhatsApp
     </a>
   </div>
+
+  <script>
+    // Datos de cada pestaña
+    const data = {
+      db: {
+        title: "Resinas DragonBall",
+        subtitle: "¡Síguenos en nuestras redes!",
+        instagram: "https://www.instagram.com/resinasdragonball",
+        tiktok: "https://www.tiktok.com/@resinasdragonball",
+        whatsapp: "https://wa.me/34633950766"
+      },
+      pm: {
+        title: "Pokemanía 3D",
+        subtitle: "¡Impresiones e icónicos de Pokémon!",
+        instagram: "https://www.instagram.com/tu_cuenta_pokemania", // Cambia por tu Instagram de Pokemanía
+        tiktok: "https://www.tiktok.com/@tu_cuenta_pokemania",    // Cambia por tu TikTok de Pokemanía
+        whatsapp: "https://wa.me/34633950766"
+      }
+    };
+
+    function switchTab(section) {
+      const tabDB = document.getElementById('tab-db');
+      const tabPM = document.getElementById('tab-pm');
+
+      if (section === 'db') {
+        tabDB.className = 'tab-btn tab-active';
+        tabPM.className = 'tab-btn tab-inactive';
+      } else {
+        tabPM.className = 'tab-btn tab-active';
+        tabDB.className = 'tab-btn tab-inactive';
+      }
+
+      // Actualizar textos y enlaces sin salir de index.html
+      document.getElementById('main-title').innerText = data[section].title;
+      document.getElementById('main-subtitle').innerText = data[section].subtitle;
+      document.getElementById('link-instagram').href = data[section].instagram;
+      document.getElementById('link-tiktok').href = data[section].tiktok;
+      document.getElementById('link-whatsapp').href = data[section].whatsapp;
+    }
+  </script>
 
 </body>
 </html>
